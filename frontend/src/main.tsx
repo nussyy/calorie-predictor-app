@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx' // Ensure it points to .tsx
-import './App.css'       // CSS import remains the same
+import App from './App.tsx' 
+import './App.css'       
 
 // Use non-null assertion (!) if you are certain 'root' element exists
 const rootElement = document.getElementById('root');

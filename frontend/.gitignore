@@ -21,4 +21,4 @@ frontend/coverage/ # Test coverage reports
 .idea/
 *.env
 .env.*.local
-.DS_Store
+.DS_Storegit add .
