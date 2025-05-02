@@ -1,0 +1,267 @@
+/* General Page Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Light background */
+  color: #333;
+  line-height: 1.5;
+}
+
+.App {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px 35px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.App-header h1 {
+  margin-top: 0;
+  color: #2c3e50; /* Darker heading */
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.App-header p {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 25px; /* Row gap, Column gap */
+  margin-bottom: 30px;
+}
+
+.form-group-span-2 {
+    grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+input[type="number"],
+select {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #fff; /* Ensure background is white */
+  -webkit-appearance: none; /* Remove default styling on WebKit */
+  -moz-appearance: textfield; /* Remove arrows on Firefox */
+}
+
+/* Remove arrows from number inputs in WebKit */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z" fill="%2334495e"/></svg>'); /* Basic dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 40px; /* Make space for arrow */
+  appearance: none; /* Override default */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db; /* Blue focus */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+    border-color: #e74c3c; /* Red border for errors */
+}
+input[aria-invalid="true"]:focus,
+select[aria-invalid="true"]:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2); /* Red focus shadow */
+}
+
+
+/* Action Buttons */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  min-width: 140px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.button-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+.button-secondary {
+  background-color: #ecf0f1;
+  color: #34495e;
+  border: 1px solid #bdc3c7;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #dadedf;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+   box-shadow: none;
+}
+
+/* Feedback Styling */
+.validation-error {
+  color: #c0392b; /* Darker Red */
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.error-message.api-error {
+  margin-top: 25px;
+  padding: 15px 20px;
+  background-color: #fdecea;
+  color: #c0392b;
+  border: 1px solid #f1b0ab;
+  border-left: 5px solid #e74c3c; /* Accent border */
+  border-radius: 6px;
+  text-align: left; /* Align text left */
+}
+.error-message strong {
+    font-weight: 600;
+}
+
+.prediction-result {
+  margin-top: 35px;
+  padding: 25px;
+  background-color: #eaf6ff;
+  border: 1px solid #b3d7ff;
+  border-left: 5px solid #3498db; /* Accent border */
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prediction-result h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #2980b9;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.prediction-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 5px 0;
+  line-height: 1.2;
+}
+
+.prediction-unit {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    margin-left: 5px;
+}
+
+.prediction-result small {
+    display: block;
+    margin-top: 15px;
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+  .App {
+      margin: 15px;
+      padding: 20px 25px;
+  }
+  .form-grid {
+      grid-template-columns: 1fr; /* Stack fields */
+      gap: 18px; /* Adjust gap */
+  }
+  .form-group-span-2 {
+      grid-column: span 1;
+  }
+  .form-actions {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  button {
+      width: 100%;
+  }
+  .prediction-value {
+      font-size: 2.1rem;
+  }
+   .App-header h1 { font-size: 1.8rem; }
+}
